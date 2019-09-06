@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>puzzle</title>
+</head>
+<body>
+    <img id = "1" src = "animal for puzzle/cat1.png" alt = "cat1" onclick="change(this.id);accept();" width = "640" height = "213"><br>
+    <img id = "4" src = "animal for puzzle/dog2.png" alt = "dog2" onclick="change(this.id);accept();" width = "640" height = "213"><br>
+    <img id = "7" src = "animal for puzzle/bear3.png" alt = "bear3" onclick="change(this.id);accept();" width = "640" height = "213"><br>
+<script>
+function change(imgea) {
+    let img = document.getElementById(imgea);
+    switch (img.alt) {
+        case "cat1":
+            img.src = "animal for puzzle/dog1.png";
+            img.alt = "dog1";
+            break;
+        case "dog1":
+            img.src = "animal for puzzle/bear1.png";
+            img.alt = "bear1";
+            break;
+        case "bear1":
+            img.src = "animal for puzzle/cat1.png";
+            img.alt = "cat1";
+            break;
+        case "cat2":
+            img.src = "animal for puzzle/dog2.png";
+            img.alt = "dog2";
+            break;
+        case "dog2":
+            img.src = "animal for puzzle/bear2.png";
+            img.alt = "bear2";
+            break;
+        case "bear2":
+            img.src = "animal for puzzle/cat2.png";
+            img.alt = "cat2";
+            break;
+        case "cat3":
+            img.src = "animal for puzzle/dog3.png";
+            img.alt = "dog3";
+            break;
+        case "dog3":
+            img.src = "animal for puzzle/bear3.png";
+            img.alt = "bear3";
+            break;
+        case "bear3":
+            img.src = "animal for puzzle/cat3.png";
+            img.alt = "cat3";
+            break;
+    }
+}
+function accept() {
+    let img1 = document.getElementById('1');
+    let img2 = document.getElementById('4');
+    let img3 = document.getElementById('7');
+    if((img1.alt === "cat1" && img2.alt === "cat2" && img3.alt === "cat3") || (img1.alt === "dog1" && img2.alt === "dog2" && img3.alt === "dog3") || (img1.alt === "bear1" && img2.alt === "bear2" && img3.alt === "bear3")){
+        document.getElementById('1').style.boxShadow = "4px 4px 9px red";
+        document.getElementById('4').style.boxShadow = "4px 4px 9px red";
+        document.getElementById('7').style.boxShadow = "4px 4px 9px red";
+    }else{
+        document.getElementById('1').style.boxShadow = "1px 1px 1px black";
+        document.getElementById('4').style.boxShadow = "1px 1px 1px black";
+        document.getElementById('7').style.boxShadow = "1px 1px 1px black";
+    }
+}
+</script>
+</body>
+</html>
