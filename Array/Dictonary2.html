@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictonary 2</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td><input type="text" id="input1"></td>
+        <td><input type="button" id="butt" value="Translate" onclick="click1()"></td>
+    </tr>
+</table>
+<div id="result"></div>
+<script>
+    function click1() {
+        let a = document.getElementById("input1").value;
+        let English = ["was", "should", "could", "will", "well"];
+        let vietnamese = ["đã", "nên", "có thể", "sẽ", "tốt"];
+        for (let x = 0; x < English.length; x++) {
+            if (English[x]===a) {
+                document.getElementById('result').innerHTML = vietnamese[x];
+                break;
+            }else if(vietnamese[x]===a) {
+                document.getElementById('result').innerHTML=English[x];
+                break;
+            }else {
+                document.getElementById('result').innerHTML='Not Found';
+            }
+        }
+    }
+</script>
+</body>
+</html>
