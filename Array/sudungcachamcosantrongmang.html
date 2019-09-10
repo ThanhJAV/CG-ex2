@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Su dung cac ham co san trong mang</title>
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend>Red,Green,White,Black</legend>
+        <script>
+        myColor = ["Red", "Green", "White", "Black"];
+        document.write(myColor.toString());
+        </script>
+    </fieldset>
+</form><br>
+<!--Chương trình nhận một số nhập vào và chèn dấu (-) giữa 2  số chẵn. Nếu muốn run chương trình này thì comment form 3 lại và bỏ comment form 2-->
+<!--<form>
+    <fieldset>
+        <legend>Chương trình nhận một số nhập vào và chèn dấu (-) giữa 2  số chẵn</legend>
+        <script>
+        var num = window.prompt();
+        var str = num.toString();
+        var result = [str[0]];
+        for (var x = 1; x < str.length; x++) {
+        if (str[x - 1] % 2 === 0 && str[x] % 2 === 0) {
+        result.push('-', str[x]);
+        } else {
+        result.push(str[x]);
+        }
+        }
+        document.write(result.join(''));
+        </script>
+    </fieldset>
+</form>--><br>
+<form>
+
+    <fieldset>
+        <legend>Chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ hoa.</legend>
+
+        <script>
+           let str = prompt("");
+           let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+           let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+           let result = [];
+
+            for(let x=0; x<str.length; x++)
+            {
+                if(UPPER.includes(str[x]))
+                {
+                    result.push(str[x].toLowerCase());
+                }
+                else if(LOWER.includes(str[x]))
+                {
+                    result.push(str[x].toUpperCase());
+                }
+                else
+                {
+                    result.push(str[x]);
+                }
+            }
+            document.write(result.join(''));
+        </script>
+    </fieldset>
+</form>
+</body>
+</html>
