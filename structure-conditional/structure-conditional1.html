@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Structure-Conditional</title>
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend>Chuyển từ meter sang feet</legend>
+        <table>
+            <tr>
+                <td>Nhập mét</td>
+                <td><input type="text" id="inputmeter"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="Convert" onclick="disPlay()"></td>
+                <td><div id="display"></div></td>
+            </tr>
+        </table>
+        <script>
+            function disPlay() {
+                let m = +parseFloat(document.getElementById("inputmeter").value);
+                let feet = m * 3.2808;
+                document.getElementById("display").innerHTML = feet + " feet";
+            }
+        </script>
+    </fieldset>
+</form><br><br>
+<form>
+    <fieldset>
+        <legend>Tính diện tích hình vuông khi biết cạnh a.</legend>
+        <table>
+            <tr>
+                <td>Nhập cạnh góc vuông</td>
+                <td><input type="text" id="squareEdge"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value ="Area" onclick="dddisplay()"></td>
+                <td><div id="ddisplay"></div></td>
+            </tr>
+        </table>
+        <script>
+            function dddisplay(){
+                let inputSquare = +parseInt(document.getElementById("squareEdge").value);
+                let are = inputSquare * inputSquare;
+                document.getElementById("ddisplay").innerHTML = `Diện tích hình vuông là ${are}`;
+            }
+        </script>
+    </fieldset>
+</form><br><br>
+<form>
+    <fieldset>
+        <legend>Giải phương trình bậc 2</legend>
+        <table>
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Nhập a : </td>
+                            <td><input type="text" id="iinputa"></td>
+                        </tr>
+                        <tr>
+                            <td>Nhập b : </td>
+                            <td><input type="text" id="iinputb"></td>
+                        </tr>
+                        <tr>
+                            <td>Nhập c : </td>
+                            <td><input type="text" id="iinputc"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" id="handling" value="Result" onclick="equationn()"></td>
+                        </tr>
+                        <tr>
+
+                        </tr>
+                    </table>
+                </td>
+                <td><div id="equation"></div> </td>
+            </tr>
+        </table>
+
+        <script>
+            function equationn(){
+                let a = +parseFloat(document.getElementById("iinputa").value);
+                let b = +parseFloat(document.getElementById("iinputb").value);
+                let c = +parseFloat(document.getElementById("iinputc").value);
+                let delta = (b * b) - 4 * (a * c);
+                if(a===0){
+                    document.getElementById("equation").innerHTML = "Mời nhập lại a !"
+                }else if(delta<0){
+                    document.getElementById("equation").innerHTML = "Phương trình vô nghiệm ! !"
+                }else if(delta > 0){
+                    document.getElementById("equation").innerHTML = "Phương trình có 2 nghiệm phân biệt : "+"<br>"+"x1 = " + (-b + Math.sqrt(delta))/(2*a) + "<br>" + "x2 = " + (-b - Math.sqrt(delta))/(2*a);
+                }else if(delta === 0) {
+                    document.getElementById("equation").innerHTML = "Phương trình có 2 nghiệm kép x1 = x2 = " + -b / (2 * a);
+                }
+            }
+        </script>
+    </fieldset>
+</form>
+<form>
+    <fieldset>
+        <legend>Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác</legend>
+        <table>
+            <tr>
+                <td>Nhập cạnh a : </td>
+                <td><input type="text" id="edge1"></td>
+            </tr>
+            <tr>
+                <td>Nhập cạnh b : </td>
+                <td><input type="text" id="edge2"></td>
+            </tr>
+            <tr>
+                <td>Nhập cạnh c : </td>
+                <td><input type="text" id="edge3"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="Check" onclick="checkkk()"></td>
+                <td><div id="play"></div> </td>
+            </tr>
+        </table>
+        <script>
+            function checkkk(){
+                let a = +parseInt(document.getElementById("edge1").value);
+                let b = +parseInt(document.getElementById("edge2").value);
+                let c = +parseInt(document.getElementById("edge3").value);
+                if(a+b > c || b+c > a || a+c > b) {
+                    document.getElementById("play").innerHTML = a + "," + b + "," + c + " là 3 cạnh của 1 tam giác";
+                }else if(a <= 0 || b <= 0 || c <= 0){
+                    document.getElementById("play").innerHTML = a +"," + b + "," + c + " không là 3 cạnh của 1 tam giác";
+                }else if(a <= 0 && b <= 0 && c <= 0) {
+                    document.getElementById("play").innerHTML = a + "," + b + "," + c + " không là 3 cạnh của 1 tam giác";
+                }
+                if (a === b || b === c || c === a){
+                    document.getElementById("play").innerHTML = a +"," + b + "," + c + " là 3 cạnh của 1 tam giác cân";
+                }else if(a === b && b === c && c === a){
+                    document.getElementById("play").innerHTML = a +"," + b + "," + c + " là 3 cạnh của 1 tam giác đều";
+                }else if(a * a == b * b + c * c || b * b == a * a + c * c || c * c == b * b + a * a) {
+                    document.getElementById("play").innerHTML = a +"," + b + "," + c + "  khônglà 3 cạnh của 1 tam giác vuông";
+                }
+            }
+
+        </script>
+
+    </fieldset>
+</form>
+</body>
+</html>
