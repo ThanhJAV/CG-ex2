@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>check prime</title>
+</head>
+<body>
+
+<script>
+    function isPrime(number) {
+        if (number < 2) {
+            return false;
+        } else {
+            for (let i = 2; i < number; i++) {
+                if (number % i === 0) {
+                    return false;
+                    break;
+                }
+            }
+            return true;
+        }
+    }
+    let N = 2;
+    while (N < 1000) {
+        if (isPrime(N)) {
+            document.write(N + "  ")
+        }
+        N++;
+    }
+
+</script>
+
+</body>
+</html>

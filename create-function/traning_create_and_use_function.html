@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Training create and use function</title>
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend>Tạo hàm alertMessage() hiển thị hộp thoại chứa chuỗi  "Xin chao"</legend>
+        <script>
+            message();
+            function message(Xinchao) {
+                Xinchao = document.write("Xin chao");
+            }
+        </script>
+    </fieldset>
+</form><br><br>
+<form>
+    <fieldset>
+        <legend>Tạo hàm nhận vào một đối số dạng số, tăng giá trị đối số đó lên 1 và trả lại giá trị cho lời gọi hàm</legend>
+        <script>
+            parameter();
+            function parameter(parameter1) {
+                 parameter1 = 1;
+                 parameter1 ++;
+                 document.write(parameter1);
+            }
+        </script>
+    </fieldset>
+</form><br><br>
+<form>
+    <fieldset>
+        <legend>Tạo hàm nhận vào hai tham số.</legend>
+         <!--Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, hiển thị hộp thoại thông báo
+             cho người dùng. Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số.-->
+        <table>
+            <tr>
+                <td>Nhập a : </td>
+                <td><input type="text" id="inputtaa"></td>
+            </tr>
+            <tr>
+                <td>Nhập b : </td>
+                <td><input type="text" id="inputtbb"></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="checck" onclick="parameter2()" value="Check"></td>
+            </tr>
+        </table>
+        <script>
+
+            function parameter2(c,d) {
+                let a = +parseFloat(document.getElementById("inputtaa").value);
+                let b = +parseFloat(document.getElementById("inputtbb").value);
+                if(a>b){
+                    alert(a +">"+ b);
+                }else if(a<=b){
+                    alert(a+b);
+                }
+            }
+        </script>
+    </fieldset>
+</form><br><br>
+<!--
+<form>
+    <fieldset>
+        <legend>Thêm các hàm alert() vào những vị trí thích hợp trong đoạn mã sau</legend>
+        <script>
+            function addNumbers() {
+            firstNum = 4;
+            secondNum = 8;
+            result = firstNum + secondNum;
+            return result;
+
+            }
+            result = alert(0);
+            result = alert(addNumbers());
+        </script>
+    </fieldset>
+</form><br><br>-->
+<form>
+    <fieldset>
+        <legend>Bài 5: Tạo một mảng với bảy phần tử dạng chuỗi có giá trị là tên các ngôi sao</legend>
+        <table>
+            <tr>
+                <td><input type="text" id="input1" oninput="click1(this.value)"></td>
+            </tr>
+        </table>
+        <div id="result"></div>
+        <script>
+            function click1() {
+                let get_value_input = document.getElementById("input1").value;
+                let name1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe","Regulus"];
+                let name2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major" , "Leo"];
+                for (let x = 0; x < name1.length; x++) {
+                    if (name1[x]===get_value_input) {
+                        document.getElementById('result').innerHTML = name2[x];
+                        break;
+                    }else if(name2[x]===get_value_input) {
+                        document.getElementById('result').innerHTML=name1[x];
+                        break;
+                    }else {
+                        document.getElementById('result').innerHTML='Not Found';
+                    }
+                }
+            }
+        </script>
+
+    </fieldset>
+</form>
+
+</body>
+</html>
