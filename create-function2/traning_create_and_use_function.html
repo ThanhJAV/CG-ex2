@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Traning create and use function</title>
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend>Viết hàm tính bình phương của một số bất kỳ được đưa vào</legend>
+            <table>
+                <tr>
+                    <td>Nhập số : </td>
+                    <td><input type="text" id="inputNumber" oninput="displaySquare()"></td>
+                    <td><div id= "display"></div></td>
+                </tr>
+            </table>
+<script>
+    let inputNumber = document.getElementById("inputNumber");
+    let a;
+    function square() {
+        a = inputNumber.value * inputNumber.value;
+        return  a;
+    }
+    function displaySquare() {
+        document.getElementById("display").innerHTML = "&nbsp" + square();
+    }
+</script>
+    </fieldset>
+</form><br><br>
+<form>
+    <fieldset>
+        <legend> Viết hàm tính diện tích, hàm tính chu vi hình tròn. </legend>
+            <table>
+                <tr>
+                    <td>Nhập bán kính : </td>
+                    <td><input type="text" id="inputRadius" oninput="displayAreaAndPerimeter()"></td>
+                    <td><div id="displayArea"></div> </td>
+                </tr>
+                <tr>
+                    <td>Nhập đường kính : </td>
+                    <td><input type="text" id="inputDiameter" oninput="displayAreaAndPerimeter()"></td>
+                    <td><div id="displayPerimeter"></div></td>
+                </tr>
+            </table>
+        <script>
+            let perimeter;
+            let area;
+            let radius = document.getElementById("inputRadius");
+            let diameter = document.getElementById("inputDiameter");
+            function areaCalculation() {
+                area = (radius.value * radius.value) * 3.14;
+                return area;
+            }
+            function perimeterCalculation(){
+                perimeter = diameter.value * 3.14;
+                return  perimeter;
+            }
+            function displayAreaAndPerimeter() {
+                document.getElementById("displayArea").innerHTML = areaCalculation();
+                document.getElementById("displayPerimeter").innerHTML = perimeterCalculation();
+            }
+        </script>
+    </fieldset>
+</form><br><br>
+<form>
+    <fieldset>
+        <legend>Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào</legend>
+        <table>
+            <tr>
+                <td>Enter number : </td>
+                <td><input type="text" id="enterNumber" oninput="displayFactorial()"></td>
+                <td><div id="displayffactorial"></div></td>
+            </tr>
+        </table>
+        <script>
+            let num  = document.getElementById("enterNumber");
+            let factorial = 1;
+            function factorialCalculation() {
+                for( let i=1 ; i<=num.value ; i++ ){
+                    factorial*= i;
+                }
+                return factorial;
+            }
+            function displayFactorial() {
+                document.getElementById("displayffactorial").innerHTML =  factorialCalculation() ;
+            }
+        </script>
+    </fieldset>
+</form><br><br>
+<form>
+    <fieldset>
+        <legend>Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không</legend>
+        <table>
+            <tr>
+                <td>Nhập kí tự : </td>
+                <td><input type="text" id="inputCharacters" oninput="displayResult()"></td>
+                <td><div id="displayCharacters"></div></td>
+            </tr>
+        </table>
+        <script>
+            let characters = document.getElementById("inputCharacters");
+            function checkCharacters(){
+                if(characters.value % 1 == 0){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+            function displayResult() {
+                document.getElementById("displayCharacters").innerHTML = checkCharacters();
+            }
+        </script>
+    </fieldset>
+</form><br><br>
+<form>
+    <fieldset>
+        <legend>Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất</legend>
+        <table>
+            <tr>
+                <td>Nhập 3 số :</td>
+                <td><input type="text" id="enter_number"></td>
+                <td>
+                    <div id="check_number"></div>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" id="displayResult1" onclick="displayResult()" value="Result"></td>
+            </tr>
+        </table>
+    </fieldset>
+<script>
+
+    function compare() {
+        let arr = [];
+        let str = document.getElementById("enter_number").value ;
+        arr = str.split(",");
+        let min = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+            if (min > arr[i]) {
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+
+    function displayResult() {
+        document.getElementById("check_number").innerHTML = compare();
+    }
+</script>
+    </fieldset>
+</form><br><br>
+<form>
+    <fieldset>
+        <legend>Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không</legend>
+        <table>
+            <tr>
+                <td>Nhập số : </td>
+                <td><input type="text" id="enter-number" oninput="display_result()"></td>
+                <td><div id="display_enter_number"></div></td>
+            </tr>
+        </table>
+        <script>
+            let enterNumber = document.getElementById("enter-number");
+            function check__Number() {
+                if(enterNumber.value<0){
+                    return false;
+                }else
+                    return true;
+            }
+            function display_result() {
+                document.getElementById("display_enter_number").innerHTML = check__Number();
+            }
+
+        </script>
+    </fieldset>
+</form><br><br>
+<form>
+    <fieldset>
+        <legend>Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.</legend>
+        <table>
+            <tr>
+                <td><input type="text" id="enterTwoNumber" oninput="permutation()"> </td>
+                <td><div id="displayPermutation"></div> </td>
+            </tr>
+        </table>
+        <script>
+            function permutation() {
+                let a;
+                let b;
+                let arr = [];
+                let str = document.getElementById("enterTwoNumber").value ;
+                arr = str.split(",");
+                //let min = arr[0];
+                let temp;
+                temp = a;
+                a = b;
+                b = temp;
+                return arr;
+            }
+            function displayPermutation() {
+                document.getElementById("displayPermutation").innerHTML = permutation();
+            }
+        </script>
+    </fieldset>
+</form><br><br>
+<form>
+    <fieldset>
+        <legend>Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.
+                Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1. </legend>
+       <!-- <input id="input___number">
+        <script>
+            function number_1() {
+                let a = document.getElementById("input___number").value;
+                let aaa = [];
+                aaa.push(a);
+                aaa.split();
+                let b = prompt("nhap ki tu");
+                let count = 0;
+                for(let i=0 ; i<aaa.length ; i++){
+                    if(a === aaa[i]){
+                        count++;
+                    }
+                }
+                return (count>0) ? count : -1;
+            }
+            let result = number_1();
+            alert(result);
+
+        </script>
+    </fieldset>
+</form>-->
+
+</body>
+</html>
