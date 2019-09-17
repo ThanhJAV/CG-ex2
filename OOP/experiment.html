@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Experiment</title>
+</head>
+<body>
+<!--<canvas style="border: 1px solid red" id="myCanvas" width="200" height="100"></canvas>
+<script>
+    let c = document.getElementById("myCanvas");
+    let ctx = c.getContext("2d");
+    ctx.moveTo(0,0);
+    ctx.lineTo(200,100);
+    ctx.stroke();
+
+</script>-->
+<script>
+    function Person(name) {
+        this.name = name;
+        this.greeting = function() {
+            alert('Hi! I\'m ' + this.name + '.');
+        };
+    }
+    var person1 = new Person('Bob');
+    var person2 = new Person('Sarah');
+
+</script>
+</body>
+</html>

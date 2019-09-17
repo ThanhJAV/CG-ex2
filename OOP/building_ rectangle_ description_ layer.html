@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Building rectangle description layer</title>
+</head>
+<body>
+<div id="Result1"></div>
+<div id="Result2"></div>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+    let Rectangle = function (width , high) {
+
+        this.width = width;
+        this.high = high;
+
+        this.get_area = function () {
+            return this.width * this.high;
+        };
+        this.get_perimeter = function () {
+            return (this.width + this.high) * 2;
+        };
+        this.get_displayRectangle = function () {
+            let ctx = document.getElementById("myCanvas").getContext("2d");
+            //let ctx = c.getContext("2d");
+            //return ctx.fillStyle = "#FF0000";
+            ctx.strokeRect(0, 0, this.width, this.high);
+        };
+    };
+    let w = +parseFloat(prompt("Nhập chiều dài : "));
+    let h = +parseFloat(prompt("Nhập chiều rộng : "));
+    let rectangle = new Rectangle(w,h);
+    rectangle.get_displayRectangle();
+    let area = rectangle.get_area();
+    document.getElementById("Result1").innerHTML = "Diện tích là : " + area;
+    let perimeter = rectangle.get_perimeter();
+    document.getElementById("Result2").innerHTML = "Chu vi là : " + perimeter;
+</script>
+
+</body>
+</html>

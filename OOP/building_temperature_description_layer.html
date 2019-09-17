@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Building temperature description layer</title>
+</head>
+<body>
+<script>
+    let Temperature = function (C) {
+        this.C = C;
+
+        this.CToF = function () {
+            return (1.8 * this.C) + 32;
+        };
+        this.CToK = function () {
+            return this.C + 273.15;
+        };
+    }
+
+    let c = new Temperature(25);
+    let f = c.CToF();
+    let k = c.CToK();
+    document.write("Độ F là : " + f +"<br>" + "" + "Độ K là :" + k);
+
+
+</script>
+</body>
+</html>
