@@ -2,9 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Building flash description layer</title>
 </head>
 <body>
-$END$
+<script>
+    let Battery = function () {
+        this.setEnergy = (energy) => {
+            this.energy = energy;
+        };
+        this.getEnergy = () => {
+            return this.energy;
+        };
+        this.decreaseEnergy = () => {
+            if (this.energy > 0) {
+                this.energy--;
+            }
+        };
+        this.decreaseEnergy = () => {
+            if (this.energy > 0) {
+                this.energy--;
+            }
+
+        };
+    };
+
+    let FlashLamp = function () {
+
+        this.setBattery = (battery) => {
+            this.battery = battery;
+        };
+        this.getBatteryInfo = () => {
+            return this.battery.getEnergy();
+        };
+        this.light = () => {
+            if(this.status){
+                alert("Lighting");
+            }else{
+                alert("Not linghting");
+            }
+        };
+        this.turnOn = () => {
+            this.status = true;
+        };
+        this.turnOff = () => {
+            this.status = false;
+        };
+    };
+
+    let battery = new Battery();
+    battery.setEnergy(10);
+    let flashLamp = new FlashLamp();
+    flashLamp.setBattery(battery);
+    document.write("Battery info :" + flashLamp.getBatteryInfo() +"<br>");
+    flashLamp.light();
+
+    document.write("Turn on<br/>");
+    flashLamp.turnOn();
+    flashLamp.light();
+    document.write("Battery info:" + flashLamp.getBatteryInfo() + "<br/>");
+
+    document.write("Turn off<br/>");
+    flashLamp.turnOff();
+    flashLamp.light();
+
+</script>
 </body>
 </html>
