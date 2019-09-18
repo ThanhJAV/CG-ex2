@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:margin-left="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Building mobile description layer</title>
+</head>
+<style>
+    fieldset {
+        width: 300px;
+    }
+    input {
+        width: 200px;
+        margin-bottom: 15px;
+        margin-left:35px;
+    }
+    textarea {
+        margin-bottom: 15px;
+        width: 200px;
+        height:100px;
+        margin-left:35px;
+    }
+    button {
+        margin-left:35px;
+    }
+    div {
+        margin-left:100px;
+    }
+    legend{
+        margin-left:125px;
+    }
+
+</style>
+<body>
+<table>
+    <tr>
+        <td>
+            <fieldset>
+                <legend>Nokia</legend>
+                <div id="battery"></div><br>
+                <button id="on">On</button>
+                <button id="off">Off</button>
+                <button id="charge" onclick="charging(nokia)">Sạc</button><br><br>
+                <button onclick="sendMsg(nokia,iphone)">Send</button><br><br>
+                <input type="text" id="inputNokia" oninput="nokia.writeMsg(this.value)" placeholder="message...">
+                <textarea id="inboxNokia" placeholder="inbox"></textarea>
+                <textarea id="outboxNokia" placeholder="outbox"></textarea>
+            </fieldset>
+        </td>
+        <td>
+            <fieldset>
+                <legend>Iphone</legend>
+                <div id="battery2"></div><br>
+                <button id="on2">On</button>
+                <button id="off2">Off</button>
+                <button id="charg2" onclick="charging(iphone)">Sạc</button><br><br>
+                <button onclick="sendMsg(iphone,nokia)">Send</button><br><br>
+                <input type="text" id="inputIphone" oninput="iphone.writeMsg(this.value)" placeholder="message...">
+                <textarea id="inboxIphone" placeholder="inbox"></textarea>
+                <textarea id="outboxIphone" placeholder="outbox"></textarea>
+            </fieldset>
+        </td>
+    </tr>
+</table>
+
+<script src="building_mobile.js"></script>
+</body>
+</html>
