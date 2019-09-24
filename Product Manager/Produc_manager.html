@@ -1,10 +1,69 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Quan Li San Pham</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<table>-->
+<!--    <tr>-->
+<!--        <td>-->
+<!--            <input type="text" id="btnInput">-->
+<!--        </td>-->
+<!--        <td>-->
+<!--            <input type="button" id="btnButton" value="Add" onclick="Display()">-->
+<!--        </td>-->
+<!--    </tr>-->
+
+<!--</table>-->
+<!--<div id="display"></div>-->
+<!--<script>-->
+
+<!--    function Display() {-->
+
+<!--        let a = document.getElementById("btnInput").value;-->
+<!--        arr.push(a);-->
+<!--        document.getElementById('display').innerHTML = "";-->
+<!--        for (let i = 0; i < arr.length; i++) {-->
+<!--            document.getElementById("display").innerHTML += arr[i]+"<br>";-->
+<!--        }-->
+
+<!--    }-->
+<!--    let arr = [];-->
+
+<!--    // for (let i = 0; i < arr.length; i++) {-->
+<!--    //-->
+<!--    // }-->
+
+
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Ứng dụng quản lý sản phẩm sử dụng hàm</title>
+    <script src="index.js"></script>
 </head>
 <body>
-$END$
+​
+<input id="inputElement">
+​
+<button type="button" onclick="addElement()">Thêm</button>
+<button type="button" onclick="editElement()">Sửa</button>
+<button type="button" onclick="deleteElement()">Xóa</button>
+<button type="button" onclick="view()">Hiển thị</button>
+​
+<p id="viewElement"></p>
+<p id="viewAddElement"></p>
+<p id="viewDeleteElement"></p>
+<p id="viewEditElement"></p>
+<script src = "product_manager.js"></script>
 </body>
 </html>
+
+
+
+
+

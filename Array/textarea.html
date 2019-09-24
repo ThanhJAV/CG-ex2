@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Faking Textarea on Typing</title>
 </head>
 <body>
-$END$
+<textarea name="" id="txt" cols="30" rows="6"></textarea>
+<script>
+    let strs = [
+        "Thanh",
+        "I'm cool!"
+    ];
+
+    let t = $('#txt'),
+        str = strs[0],
+        len = str.length,
+        on = false;
+
+    t.keydown(function(e){
+        let l = t.val().length%len+1;
+
+        if(e.which == 9){
+            str = strs[(on = !on)|0];
+            len = str.length;
+        }
+
+        t.val(str.substr(0,l));
+        e.preventDefault();
+    })
+</script>
 </body>
 </html>

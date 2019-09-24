@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Min</title>
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend>Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất</legend>
+        <table>
+            <tr>
+                <td>Nhập 3 số :</td>
+                <td><input type="text" id="enter_number"></td>
+                <td>
+                    <div id="check_number"></div>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" id="displayResult1" onclick="displayResult()" value="Result"></td>
+            </tr>
+        </table>
+
+    </fieldset>
+</form>
+<script>
+
+    function compare() {
+        let arr = [];
+        let str = document.getElementById("enter_number").value ;
+        arr = str.split(",");
+        let min = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+            if (min > arr[i]) {
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+
+    function displayResult() {
+        document.getElementById("check_number").innerHTML = compare();
+    }
+
+
+</script>
+</body>
+</html>
