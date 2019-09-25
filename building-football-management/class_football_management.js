@@ -120,7 +120,6 @@ function edit(index) {
     document.getElementById("numberPlayer").value=manager.players[index].number;
     document.getElementById("salaryPlayer").value=manager.players[index].salary;
    vitri=index;
-   return vitri;
 }
 
 function delPlayer(index) {
